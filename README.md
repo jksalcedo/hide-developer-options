@@ -1,6 +1,6 @@
 # Hide Developer Options
 
-Root module that makes Developer options and USB debugging read as **off** while selected apps are launching or in the foreground, then restores your real settings. It only writes system settings: no hooks, no injection, nothing touches the app's process.
+Root module that makes Developer options and USB debugging read as **off** (and turns adb off) while selected apps are launching or in the foreground, then restores your real settings. It only writes system settings: no hooks, no injection, nothing touches the app's process.
 
 Works with Magisk, KernelSU and APatch.
 
@@ -29,6 +29,18 @@ Optional `/data/adb/hide_developer_options/config.sh`:
 | `KEYS` | dev options, adb, wireless adb | `namespace:key` list to force to `0` |
 
 Logs: `/data/adb/hide_developer_options/log.txt`
+
+## Compatibility
+Android 17 already hides adb_enabled and development_settings_enabled from third-party apps, so this module is only needed for:
+
+- Android 16 and older
+- I think some android 17 custom ROMs
+- Apps that detect ADB via adbd or USB properties (this module turns ADB off while the target app is open)
+
+> [!TIP]
+> On android 17 builds, remove the first two keys from `KEYS` in `config.sh`.
+
+Tested on: Xiaomi sweet / VoltageOS 6.1 / 17
 
 ## Limitations
 
