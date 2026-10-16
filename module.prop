@@ -1,0 +1,6 @@
+id=hide_developer_options
+name=Hide Developer Options
+version=1.0
+versionCode=1
+author=jksalcedo
+description=Hides Developer options and USB debugging from selected apps while they run. No hooks, no injection.
