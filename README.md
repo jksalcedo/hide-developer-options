@@ -1,5 +1,8 @@
 # Hide Developer Options
 
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/jksalcedo/hide-developer-options/total)
+
+
 Root module that makes Developer options and USB debugging read as **off** (and turns adb off) while selected apps are launching or in the foreground, then restores your real settings. It only writes system settings: no hooks, no injection, nothing touches the app's process.
 
 Works with Magisk, KernelSU and APatch.
